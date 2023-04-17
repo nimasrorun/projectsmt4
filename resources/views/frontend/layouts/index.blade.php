@@ -26,7 +26,8 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('frontend/assets/css/style.css')}}" rel="stylesheet">
-
+  {{-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> --}}
   <!-- =======================================================
   * Template Name: Serenity - v4.1.0
   * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
@@ -52,7 +53,7 @@
           <li><a class="active" href="index.html">Home</a></li>
           <li><a href="{{ route('transaksi') }}">Laman Transaksi</a></li>
           <li><a href="{{ route('login') }}">Logout</a></li>
-
+          <i class="fa fa-sm fa-user-circle-o" ></i>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

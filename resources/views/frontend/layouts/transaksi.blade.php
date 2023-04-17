@@ -50,7 +50,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="active" href="{{ route('home') }}">Home</a></li>
-          <li><a class="getstarted" href="{{ route('login') }}">Logout</a></li>
+          <li><a href="{{ route('login') }}">Logout</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
