@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link href="{{ asset('frontend/assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{ asset('frontend/assets/css/login.css')}}" rel="stylesheet">
 </head>
 <body>
   <div class="cont">
@@ -19,7 +19,8 @@
         <span>Password</span>
         <input type="password" />
       </label>
-      <p class="forgot-pass">Forgot password?</p>
+      
+      <label ><p class="forgot-pass">Forgot password?</p></label>
       <button type="button" class="submit">Sign In</button>
  
     </div>
@@ -65,7 +66,7 @@
 
 
 <!-- Template Main JS File -->
-<script src="{{ asset('frontend/assets/js/main.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/login.js')}}"></script>
 
 </body>
 </html>
