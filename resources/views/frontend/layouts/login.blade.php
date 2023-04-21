@@ -10,7 +10,8 @@
 <body>
   <div class="cont">
     <div class="form sign-in">
-      <h2>Welcome back,</h2>
+      <h2>Login</h2>
+      <p>Welocome to SKYdhule</p>
       <label>
         <span>Email</span>
         <input type="email" />
@@ -27,7 +28,7 @@
     <div class="sub-cont">
       <div class="img">
         <div class="img__text m--up">
-          <h2>New here?</h2>
+          <h2>Baru disini?</h2>
           <p>Sign up and discover great amount of new opportunities!</p>
         </div>
         <div class="img__text m--in">
@@ -40,7 +41,7 @@
         </div>
       </div>
       <div class="form sign-up">
-        <h2>Time to feel like home,</h2>
+        <h2>Register</h2>
         <label>
           <span>Name</span>
           <input type="text" />

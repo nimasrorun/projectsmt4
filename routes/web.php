@@ -24,3 +24,13 @@ Route::get('/transaksi', function(){
 Route::get('/login', function(){
     return view('frontend.layouts.login');
 })->name('login');
+Route::get('/profile', function(){
+    return view('frontend.layouts.profile');
+})->name('profile');
+Route::get('/editp', function(){
+    return view('frontend.layouts.editp');
+})->name('editp');
+Route::get('/coba', function(){
+    return view('frontend.layouts.coba');
+})->name('coba');
+
