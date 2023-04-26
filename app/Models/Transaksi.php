@@ -14,4 +14,8 @@ class Transaksi extends Model
     public function metode_pembayaran(): BelongsTo {
         return $this->belongsTo(metode_pembayaran::class);
     }
+    protected $fillable = [
+        'tanggal', 'harga', 'bukti_pembayaran',
+        'nama_akun_bank', 'nama_bank',
+    ];
 }

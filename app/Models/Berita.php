@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Schedule extends Model
+class Berita extends Model
 {
     use HasFactory;
 
-    public function user(): BelongsTo {
-        return $this->belongsTo(users::class);
-    }
-
     protected $fillable = [
-        'judul', 'deskripsi', 'tanggal',
-        'jam', 
+        'judul_berita', 'deskripsi_berita', 
     ];
 }

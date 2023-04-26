@@ -18,7 +18,7 @@ class AuthController extends Controller
             'confirm_password' => 'required|same:password'
         ]);
 
-        if($validator->fails()) {
+        if($validator->fails()) { 
             return response()->json([
                 'status' => false,
                 'message' => 'Ada kesalahan',
@@ -33,7 +33,7 @@ class AuthController extends Controller
         $success['username'] = $user->username;
 
         return response()->json([
-            'status' => true,
+            'status' => true, 
             'message' => 'sukses belajar',
             'data' => $success
         ]);

@@ -11,4 +11,7 @@ class Metode_pembayaran extends Model
     public function transaksi(): HasMany {
         return $this->hasMany(transaksi::class);
    }
+   protected $fillable = [
+    'bank', 
+   ];
 }
