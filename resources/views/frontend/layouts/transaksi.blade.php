@@ -97,19 +97,19 @@
                   </ul>
                 </div>
                 <div class="col-lg-6 div-inline-block">
-                  <form class="needs-validation" novalidate="">
+                  <form class="" novalidate="">
                     <div class="form-row">
-                      <div class="col-md-4 mb-3">
-                        <label for="validationCustom01">First name</label>
+                      <div class="col-md-4 col-lg-12 mb-3">
+                        <label for="validationCustom01">Nama</label>
                         <input class="form-control" id="validationCustom01" type="text" placeholder="First name" required="">
                         <div class="valid-feedback">Looks good!</div>
                       </div>
-                      <div class="col-md-4 mb-3">
+                      <div class="col-md-4 col-lg-12 mb-3 ">
                         <label for="validationCustom02">Last name</label>
                         <input class="form-control" id="validationCustom02" type="text" placeholder="Last name" required="">
                         <div class="valid-feedback">Looks good!</div>
                       </div>
-                      <div class="col-md-4 mb-3">
+                      <div class="col-md-4 col-lg-12 mb-3">
                         <label for="validationCustomUsername">Username</label>
                         <div class="input-group">
                           <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend">@</span></div>
@@ -119,17 +119,17 @@
                       </div>
                     </div>
                     <div class="form-row">
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-6 col-lg-12 mb-3">
                         <label for="validationCustom03">City</label>
                         <input class="form-control" id="validationCustom03" type="text" placeholder="City" required="">
                         <div class="invalid-feedback">Please provide a valid city.</div>
                       </div>
-                      <div class="col-md-3 mb-3">
+                      <div class="col-md-3 col-lg-12 mb-3">
                         <label for="validationCustom04">State</label>
                         <input class="form-control" id="validationCustom04" type="text" placeholder="State" required="">
                         <div class="invalid-feedback">Please provide a valid state.</div>
                       </div>
-                      <div class="col-md-3 mb-3">
+                      <div class="col-md-3 col-lg-12 mb-3">
                         <label for="validationCustom05">Zip</label>
                         <input class="form-control" id="validationCustom05" type="text" placeholder="Zip" required="">
                         <div class="invalid-feedback">Please provide a valid zip.</div>

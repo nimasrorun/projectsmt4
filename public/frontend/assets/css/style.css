@@ -504,6 +504,7 @@ section {
 --------------------------------------------------------------*/
 .about .container {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
   padding-bottom: 15px;
   background: #fff;
 }
@@ -684,8 +685,19 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: #A7CDDC;
-  padding: 50px 0;
+  /* background: #A7CDDC; */
+  margin: 0px 50px;
+  background-image: url("../img/premium_banner.jpg");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/premium_banner.jpg"); */
+
+  /* Set a specific height */
+  /* height: 50%; */
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .cta h3 {
@@ -707,11 +719,13 @@ section {
   margin-top: 10px;
   border: 2px solid #2B4F66;
   color: #2B4F66;
+  background-color: #D9D9D9;
 }
 
 .cta .cta-btn:hover {
   background: #ffffff;
 }
+
 
 /*--------------------------------------------------------------
 # Services
@@ -728,6 +742,11 @@ section {
 }
 .services .icon-box div {
   display: inline-block;
+  vertical-align: top;
+}
+.services .icon-box div:first-child {
+  display: inline-block;
+  width: 25%;
 }
 
 .services .icon-box:hover {
@@ -735,7 +754,6 @@ section {
 }
 
 .services .icon {
-  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -886,7 +904,7 @@ section {
 .clients .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: #fff;
+  background-color: #9c9c9c;
   opacity: 1;
   border: 1px solid #3772a1;
 }
@@ -2428,8 +2446,8 @@ input:last-of-type:before {
 }
 
 .berita-img-sm-banner {
-  width: 100%;
-  height: 350px;
+  width: 200px;
+  /* height: 50px; */
   border-radius: 20px;
   object-fit: cover;
 }
@@ -2470,3 +2488,11 @@ input:last-of-type:before {
   display: inline-block;
   vertical-align: top;
 }
+
+.form-control {
+  width: 100%;
+  border-radius: 4px;
+  font-size: 1rem;
+  height: 37px;
+}
+

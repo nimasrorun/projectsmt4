@@ -94,7 +94,7 @@
                     
                     <div class="swiper-slide">
                       <div class="testimonial-item">
-                        <img src="{{ asset('frontend/assets/img/features-2.jpg') }}" class="testimonial-img-banner" alt="">
+                        <img src="{{ asset('frontend/assets/img/promosi-banner-1.jpg') }}" class="testimonial-img-banner" alt="">
                       </div>
                     </div>
 
@@ -218,7 +218,7 @@
         <div class="row">
 
           @foreach ($berita as $item)
-          <div class="col-md-6">
+          <div class="col-md-6 col-lg-12">
             <div class="icon-box" data-aos="fade-up">
               <div >
                 <div class="icon"><img src="{{ asset('frontend/assets/img/berita_image/'.$item->gambar)}}" class="berita-img-sm-banner"></div>
@@ -230,7 +230,7 @@
             </div>
           </div>
           @endforeach
-          <div class="col-md-6">
+          <div class="col-md-6 col-lg-12">
             <div class="icon-box" data-aos="fade-up">
               <div >
                 <div class="icon"><img src="{{ asset('frontend/assets/img/berita_image/berita1.jpg')}}" class="berita-img-sm-banner"></div>
