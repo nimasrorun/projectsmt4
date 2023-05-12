@@ -12,10 +12,10 @@
   <!-- Favicons -->
   <link href="{{ asset('frontend/assets/img/favicon.png')}}" rel="icon">
   <link href="{{ asset('frontend/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">  
   <!-- Vendor CSS Files -->
   <link href="{{ asset('frontend/assets/vendor/aos/aos.css')}}" rel="stylesheet">
   <link href="{{ asset('frontend/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -26,14 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('frontend/assets/css/style.css')}}" rel="stylesheet">
-  {{-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> --}}
-  <!-- =======================================================
-  * Template Name: Serenity - v4.1.0
-  * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
@@ -43,18 +36,21 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="index.html">SKYdhule</a></h1>
+        <h1 class="text-light"><a href="{{ route('home') }}">SKYdhule</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-
+   
+    
+    
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active" href="index.html">Home</a></li>
-          <li><a href="{{ route('transaksi') }}">Laman Transaksi</a></li>
+          <li><a href="{{ route('home') }}">Home</a></li>
+          <li><a href="{{ route('transaksi') }}">Transaksi</a></li>
           <li><a href="{{ route('login') }}">Logout</a></li>
-          <i class="fa fa-sm fa-user-circle-o" ></i>
+          <a href="{{ route('profile') }}" ><i class="fa fa-user-circle"  style='font-size:19px'></i></a>
         </ul>
+       
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -89,24 +85,110 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-6 pt-3 pt-lg-0 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bx bx-check-double"></i> Voluptate repellendus pariatur reprehenderit corporis sint.</li>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
-          </div>
+         
+            <section id="testimonials" class="testimonials">
+              <div class="container" data-aos="zoom-in">
+        
+                <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+                  <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="{{ asset('frontend/assets/img/promosi-banner-1.jpg') }}" class="testimonial-img-banner" alt="">
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                        <h3>Saul Goodman</h3>
+                        <h4>Ceo &amp; Founder</h4>
+                        <p>
+                          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                          Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                      </div>
+                    </div><!-- End testimonial item -->
+        
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                        <h3>Sara Wilsson</h3>
+                        <h4>Designer</h4>
+                        <p>
+                          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                          Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                      </div>
+                    </div><!-- End testimonial item -->
+        
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="assets/img/features-3.jpg" class="testimonial-img" alt="">
+                        
+                      </div>
+                    </div><!-- End testimonial item -->
+        
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                        <h3>Matt Brandon</h3>
+                        <h4>Freelancer</h4>
+                        <p>
+                          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                          Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                      </div>
+                    </div><!-- End testimonial item -->
+        
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                        <h3>John Larson</h3>
+                        <h4>Entrepreneur</h4>
+                        <p>
+                          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                          Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                      </div>
+                    </div><!-- End testimonial item -->
+        
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+        
+              </div>
+            </section>
+            {{-- <div class="wrapper">
+              <input type="radio" name="image-slide" checked="checked">
+              <picture >
+                <img src="public/frontend/assets/img/features-1.jpg" >
+              </picture>
+            
+              <input type="radio" name="image-slide">
+              <picture >
+                <img src="https://picsum.photos/500/300?random=2" alt="">
+              </picture>
+            
+              <input type="radio" name="image-slide">
+              <picture >
+                
+                  <img src="https://picsum.photos/500/300?random=3" alt="">
+                
+              </picture>
+            
+              <input type="radio" name="image-slide">
+              <picture>
+                <img src="public/frontend/assets/img/features-1.jpg" alt="">
+              </picture>
+        
+            
+            </div> --}}
+         
 
         </div>
 
@@ -118,9 +200,8 @@
       <div class="container" data-aos="fade-in">
 
         <div class="text-center">
-          <h3>Call To Action</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a class="cta-btn" href="#">Call To Action</a>
+          <h3>PREMIUM</h3>
+          <a class="cta-btn" href="#">Upgrade to Pro</a>
         </div>
 
       </div>
@@ -135,13 +216,32 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6">
+
+          @foreach ($berita as $item)
+          <div class="col-md-6 col-lg-12">
             <div class="icon-box" data-aos="fade-up">
-              <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">Angin Topan</a></h4>
-              <p class="description">deskripsi</p>
+              <div >
+                <div class="icon"><img src="{{ asset('frontend/assets/img/berita_image/'.$item->gambar)}}" class="berita-img-sm-banner"></div>
+              </div>
+              <div>
+                <h4 class="title"><a href="">{{$item->judul_berita}}</a></h4>
+                <p class="description">{{$item->deskripsi_berita}}</p>   
+              </div>
             </div>
           </div>
+          @endforeach
+          <div class="col-md-6 col-lg-12">
+            <div class="icon-box" data-aos="fade-up">
+              <div >
+                <div class="icon"><img src="{{ asset('frontend/assets/img/berita_image/berita1.jpg')}}" class="berita-img-sm-banner"></div>
+              </div>
+              <div>
+                <h4 class="title"><a href="">Angin Topan</a></h4>
+                <p class="description">deskripsi</p>   
+              </div>
+            </div>
+          </div>
+
           <div class="col-md-6">
             <div class="icon-box" data-aos="fade-up">
               <div class="icon"><i class="bi bi-book" style="color: #e9bf06;"></i></div>
