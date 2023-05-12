@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,13 @@ Route::get('/profile', function(){
 Route::get('/editp', function(){
     return view('frontend.layouts.editp');
 })->name('editp');
-Route::get('/coba', function(){
-    return view('frontend.layouts.coba');
-})->name('coba');
 
+Route::get('/admin/transaksi', function(){
+    return view('backend.layouts.transaksi');
+})->name('adminberita');
+
+Route::resource('/admin/berita', BeritaController::class);
+
+Route::get('/admin/login', function(){
+    return view('backend.layouts.loginadmin');
+})->name('adminlogin');
