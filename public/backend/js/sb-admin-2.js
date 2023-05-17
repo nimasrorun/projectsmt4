@@ -76,6 +76,7 @@ el => {
     setActive(el, true);
   };
 });
+
 function initImageUpload(box) {
   let uploadField = box.querySelector(".image-upload");
 

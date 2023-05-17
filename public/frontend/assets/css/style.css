@@ -1182,7 +1182,7 @@ section {
 
 .pricing h4 {
   font-size: 36px;
-  color: #94c045;
+  color: #3772a1;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   margin-bottom: 20px;
@@ -1214,7 +1214,7 @@ section {
 }
 
 .pricing ul i {
-  color: #94c045;
+  color: #3772a1;
   font-size: 18px;
   padding-right: 4px;
 }
@@ -1232,7 +1232,7 @@ section {
 }
 
 .pricing .btn-buy {
-  background: #94c045;
+  background: #3772a1;
   display: inline-block;
   padding: 6px 35px 8px 35px;
   border-radius: 4px;
@@ -1242,17 +1242,17 @@ section {
   font-weight: 400;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
-  box-shadow: 0 3px 7px rgba(148, 192, 69, 0.4);
+  box-shadow: 0 3px 7px #3772a1;
   transition: 0.3s;
 }
 
 .pricing .btn-buy:hover {
-  background: #aacd6b;
+  background: #5593c5;
 }
 
 .pricing .featured h3 {
   color: #fff;
-  background: #94c045;
+  background: #3772a1;
   box-shadow: 0 3px 7px rgba(148, 192, 69, 0.4);
 }
 
@@ -1265,7 +1265,7 @@ section {
   z-index: 1;
   font-size: 14px;
   padding: 1px 0 3px 0;
-  background: #94c045;
+  background: #3772a1;
   color: #fff;
 }
 
@@ -2249,7 +2249,7 @@ input:checked {
 	background: #2B4F66;
 }
 
-input + * {
+/* input + * {
 	position: absolute;
 	display: block;
 	top: 0;
@@ -2261,7 +2261,7 @@ input + * {
 	border-radius: 5px;
 	overflow: hidden;
 	background: #ddd;
-}
+} */
 
 input + *[aria-label]:before {
 	content: attr(aria-label);
@@ -2481,7 +2481,7 @@ input:last-of-type:before {
 
 .card .card-body ul i {
     font-size: 24px;
-    color: #94c045;
+    color: #0070cc;
 }
 
 .card .card-body .div-inline-block {

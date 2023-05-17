@@ -84,58 +84,78 @@
 
           <div class="col-lg-12 entries">
             <div class="card">
-              <div class="card-header">
-                <h5>Custom styles</h5><span style="color: black">For custom Bootstrap form validation messages, you’ll need to add the <code class="text-danger">novalidate</code> boolean attribute to your <code class="text-danger">&lt;form&gt;</code>. This disables the browser default feedback tooltips, but still provides access to the form validation APIs in JavaScript. Try to submit the form below; our JavaScript will intercept the submit button and relay feedback to you.</span><span>When attempting to submit, you’ll see the <code class="text-danger">:invalid </code> and <code class="text-danger">:valid </code> styles applied to your form controls.</span>
-              </div>
+             
               <div class="card-body">
-                <div class="col-lg-5 div-inline-block">
+                {{-- <div class="col-lg-5 div-inline-block">
                   <ul>
                     <li><i class="bx bx-check-double"></i> yg di dapat kalau premium</li>
                     <li><i class="bx bx-check-double"></i> yg di dapat kalau premium</li>
                     <li><i class="bx bx-check-double"></i> yg di dapat kalau premium</li>
                     <li><i class="bx bx-check-double"></i> yg di dapat kalau premium</li>
                   </ul>
+                </div> --}}
+                <div class="col-lg-3 col-md-6 div-inline-block">
+                  <section class="pricing">
+                  <div class="box" data-aos="fade-up">
+                    <h3>Free</h3>
+                    <h4><sup>RP</sup>10k<span> / bulan</span></h4>
+                    <ul>
+                      <li><i class="bx bx-check-double"></i> yg di dapat kalau premium blblblblbblblbll</li>
+                    </ul>
+                    <div class="btn-wrap">
+                      <a href="#" class="btn-buy">Buy Now</a>
+                    </div>
+                  </div>
+                </section>
                 </div>
                 <div class="col-lg-6 div-inline-block">
                   <form class="" novalidate="">
                     <div class="form-row">
                       <div class="col-md-4 col-lg-12 mb-3">
-                        <label for="validationCustom01">Nama</label>
-                        <input class="form-control" id="validationCustom01" type="text" placeholder="First name" required="">
+                        <label class="mb-2" for="validationCustom01">Nomor Rekening</label>
+                        <input class="form-control" id="validationCustom01" type="text" placeholder="No rek" required="">
                         <div class="valid-feedback">Looks good!</div>
                       </div>
-                      <div class="col-md-4 col-lg-12 mb-3 ">
-                        <label for="validationCustom02">Last name</label>
-                        <input class="form-control" id="validationCustom02" type="text" placeholder="Last name" required="">
-                        <div class="valid-feedback">Looks good!</div>
-                      </div>
-                      <div class="col-md-4 col-lg-12 mb-3">
-                        <label for="validationCustomUsername">Username</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend">@</span></div>
-                          <input class="form-control" id="validationCustomUsername" type="text" placeholder="Username" aria-describedby="inputGroupPrepend" required="">
-                          <div class="invalid-feedback">Please choose a username.</div>
+                      <div class="row">
+                        <label class="mb-2" for="validationCustom01">Metode Pembayaran</label>
+                        <div class="col-xl-6">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Dana</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label">Gopay</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">OVO</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label">ShoopePay</label>
+                          </div>
                         </div>
+                        <div class="col-xl-6">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">BRI</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label">Mandiri</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">BNI</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label">Visa</label>
+                          </div>
+                        </div>
+                        
                       </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="col-md-6 col-lg-12 mb-3">
-                        <label for="validationCustom03">City</label>
-                        <input class="form-control" id="validationCustom03" type="text" placeholder="City" required="">
-                        <div class="invalid-feedback">Please provide a valid city.</div>
-                      </div>
-                      <div class="col-md-3 col-lg-12 mb-3">
-                        <label for="validationCustom04">State</label>
-                        <input class="form-control" id="validationCustom04" type="text" placeholder="State" required="">
-                        <div class="invalid-feedback">Please provide a valid state.</div>
-                      </div>
-                      <div class="col-md-3 col-lg-12 mb-3">
-                        <label for="validationCustom05">Zip</label>
-                        <input class="form-control" id="validationCustom05" type="text" placeholder="Zip" required="">
-                        <div class="invalid-feedback">Please provide a valid zip.</div>
-                      </div>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Submit form</button>
                   </form>
                 </div>
                 
@@ -279,7 +299,6 @@
 
   <!-- Vendor JS Files -->
   <script src="{{ asset('frontend/assets/vendor/aos/aos.js')}}"></script>
-  <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{ asset('frontend/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
   <script src="{{ asset('frontend/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
   <script src="{{ asset('frontend/assets/vendor/php-email-form/validate.js')}}"></script>
@@ -287,6 +306,7 @@
   <script src="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
   <script src="{{ asset('frontend/assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
 
+  <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <!-- Template Main JS File -->
   <script src="{{ asset('frontend/assets/js/main.js')}}"></script>
 
