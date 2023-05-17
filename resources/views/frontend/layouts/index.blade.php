@@ -241,42 +241,15 @@
               </div>
             </div>
           </div>
-
-          <div class="col-md-6">
+          <div class="col-md-6 col-lg-12">
             <div class="icon-box" data-aos="fade-up">
-              <div class="icon"><i class="bi bi-book" style="color: #e9bf06;"></i></div>
-              <h4 class="title"><a href="">Gempa Bumi</a></h4>
-              <p class="description">deskripsi</p>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-card-checklist" style="color: #3fcdc7;"></i></div>
-              <h4 class="title"><a href="">Angin Muson Barat</a></h4>
-              <p class="description">deskripsi</p>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-binoculars" style="color:#41cf2e;"></i></div>
-              <h4 class="title"><a href="">Banjir</a></h4>
-              <p class="description">deskripsi</p>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-globe" style="color: #d6ff22;"></i></div>
-              <h4 class="title"><a href="">Tsunami</a></h4>
-              <p class="description">deskripsi</p>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-clock" style="color: #4680ff;"></i></div>
-              <h4 class="title"><a href="">Angin Ribut</a></h4>
-              <p class="description">deskripsi</p>
+              <div >
+                <div class="icon"><img src="{{ asset('frontend/assets/img/berita_image/berita1.jpg')}}" class="berita-img-sm-banner"></div>
+              </div>
+              <div>
+                <h4 class="title"><a href="">Angin Topan</a></h4>
+                <p class="description">deskripsi</p>   
+              </div>
             </div>
           </div>
         </div>
