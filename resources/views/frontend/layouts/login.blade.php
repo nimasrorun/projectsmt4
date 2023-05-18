@@ -21,14 +21,14 @@
         <input type="password" />
       </label>
       
-      <label ><p class="forgot-pass">Forgot password?</p></label>
+      <a href="{{ route('forgotp')}}"><label ><p class="forgot-pass">Forgot password?</p></label></a>
       <button type="button" class="submit">Sign In</button>
  
     </div>
     <div class="sub-cont">
       <div class="img">
         <div class="img__text m--up">
-          <h2>Baru disini?</h2>
+          <h2>Hello, Friend!</h2>
           <p>Sign up and discover great amount of new opportunities!</p>
         </div>
         <div class="img__text m--in">
@@ -36,14 +36,14 @@
           <p>If you already has an account, just sign in. We've missed you!</p>
         </div>
         <div class="img__btn">
-          <span class="m--up">Sign Up</span>
-          <span class="m--in">Sign In</span>
+          <span class="m--up">Registrasi</span>
+          <span class="m--in">Login</span>
         </div>
       </div>
       <div class="form sign-up">
         <h2>Register</h2>
         <label>
-          <span>Name</span>
+          <span>Username</span>
           <input type="text" />
         </label>
         <label>

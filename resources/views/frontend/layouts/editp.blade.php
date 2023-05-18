@@ -29,12 +29,6 @@
   {{-- Profile CSS --}}
   <link href="{{ asset('frontend/assets/css/editp.css')}}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Serenity - v4.1.0
-  * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -70,15 +64,11 @@
             </div>
             <div class="panel-body bio-graph-info">
 
-                <div class="row">
+                <div class="row" style="margin-left: 100px;">
                   <div class="group" style="width: auto;">
                     <input  type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
-                    <label>Nama depan</label>
+                    <label>Username</label>
                   </div> 
-                  <div class="group" style="width: auto;">
-                    <input type="text" required="required" style=""/><span class="highlight"></span><span class="bar"></span>
-                    <label>Nama belakang</label>
-                  </div>
                   <div class="group" style="width: auto;">
                     <input type="text" required="required" style=""/><span class="highlight"></span><span class="bar"></span>
                     <label>Email</label>

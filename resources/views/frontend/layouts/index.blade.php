@@ -72,13 +72,13 @@
           <div class="col-lg-11">
             <div class="row justify-content-end">
 
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+              {{-- <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                 <div class="count-box py-5">
                   <i class="bi bi-emoji-smile"></i>
                   <span data-purecounter-start="0" data-purecounter-end="65" class="purecounter">0</span>
                   <p>Pengguna</p>
                 </div>
-              </div>
+              </div> --}}
 
             </div>
           </div>
@@ -225,33 +225,12 @@
               </div>
               <div>
                 <h4 class="title"><a href="">{{$item->judul_berita}}</a></h4>
-                <p class="description">{{$item->deskripsi_berita}}</p>   
+                <p class="description">{{$item->dekripsi_berita}}</p>   
               </div>
             </div>
           </div>
           @endforeach
-          <div class="col-md-6 col-lg-12">
-            <div class="icon-box" data-aos="fade-up">
-              <div >
-                <div class="icon"><img src="{{ asset('frontend/assets/img/berita_image/berita1.jpg')}}" class="berita-img-sm-banner"></div>
-              </div>
-              <div>
-                <h4 class="title"><a href="">Angin Topan</a></h4>
-                <p class="description">deskripsi</p>   
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-12">
-            <div class="icon-box" data-aos="fade-up">
-              <div >
-                <div class="icon"><img src="{{ asset('frontend/assets/img/berita_image/berita1.jpg')}}" class="berita-img-sm-banner"></div>
-              </div>
-              <div>
-                <h4 class="title"><a href="">Angin Topan</a></h4>
-                <p class="description">deskripsi</p>   
-              </div>
-            </div>
-          </div>
+       
         </div>
 
       </div>
@@ -266,15 +245,17 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>SKYdhuleee</h3>
-            <p>deskripsi aplikasi kami............</p>
+            <h3>SKYdhule</h3>
+            <p>Semua informasi mengenai Prakiraan Cuaca, Iklim, Kualitas Udara, dan Gempa Bumi yang terjadi di berbagai kota di dunia tercakup dalam satu aplikasi</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Link</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#"> Transaksi</a></li>
+              <li><a href="{{route('home')}}">Home</a></li>
+              <li><a href="{{route('transaksi')}}"> Transaksi</a></li>
+              <li><a href="{{route('login')}}"> Logout</a></li>
+              <li><a href="{{route('profile')}}"> Profile</a></li>
             </ul>
           </div>
 
@@ -291,7 +272,7 @@
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
               <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
               <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        
             </div>
 
           </div>
