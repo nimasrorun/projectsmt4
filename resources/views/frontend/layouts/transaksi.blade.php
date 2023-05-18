@@ -258,14 +258,16 @@
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>SKYdhule</h3>
-        
+            <p>Semua informasi mengenai Prakiraan Cuaca, Iklim, Kualitas Udara, dan Gempa Bumi yang terjadi di berbagai kota di dunia tercakup dalam satu aplikasi</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Link</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Laman Transaksi</a></li>
+              <li><a href="{{route('home')}}">Home</a></li>
+              <li><a href="{{route('transaksi')}}"> Transaksi</a></li>
+              <li><a href="{{route('login')}}"> Logout</a></li>
+              <li><a href="{{route('profile')}}"> Profile</a></li>
             </ul>
           </div>
 
@@ -281,7 +283,7 @@
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
               <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
               <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+           
             </div>
 
           </div>

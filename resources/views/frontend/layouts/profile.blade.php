@@ -28,13 +28,6 @@
   <link href="{{ asset('frontend/assets/css/style.css')}}" rel="stylesheet">
   {{-- Profile CSS --}}
   <link href="{{ asset('frontend/assets/css/profile.css')}}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Serenity - v4.1.0
-  * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -88,10 +81,7 @@
           
                 <div class="row">
                     <div class="bio-row">
-                        <p><span>Nama depan </span>: Nimas</p>
-                    </div>
-                    <div class="bio-row">
-                        <p><span>Nama belakang </span>: RN</p>
+                        <p><span>Username</span>: Nimas</p>
                     </div>
                     <div class="bio-row">
                         <p><span>Email </span>: nimasrn@gmail.com</p>

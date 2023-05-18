@@ -31,6 +31,7 @@ Route::get('/editp', function(){
     return view('frontend.layouts.editp');
 })->name('editp');
 
+
 Route::get('/admin/transaksi', function(){
     return view('backend.layouts.transaksi');
 })->name('adminberita');
@@ -40,3 +41,11 @@ Route::resource('/admin/berita', BeritaController::class);
 Route::get('/admin/login', function(){
     return view('backend.layouts.loginadmin');
 })->name('adminlogin');
+
+Route::get('/forgotp', function(){
+    return view('frontend.layouts.forgotp');
+})->name('forgotp');
+
+Route::get('/login', function(){
+    return view('frontend.layouts.login');
+})->name('login');
