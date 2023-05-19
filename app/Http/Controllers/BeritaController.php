@@ -15,16 +15,22 @@ class BeritaController extends Controller
     }
     
     public function store(Request $request){
+        
+        $file = $request->file('file');
+
+        $fileName = "IMG_BERITA_".uniqid().'.'.$file->getClientOriginalExtension();
+
         Berita::create([
             'judul_berita' => $request->input('txt_judul'),
             'dekripsi_berita' => $request->input('txt_isi'),
-            'gambar' => $request->file('file')->getClientOriginalName()
+            'gambar' => $fileName
         ]);
 
-        $file = $request->file('file');
         $tujuan_upload = 'frontend/assets/img/berita_image';
-
-        $file->move($tujuan_upload, $file->getClientOriginalName());
+        if(!File::isDirectory($tujuan_upload)){
+            File::makeDirectory($tujuan_upload, 0777, true);
+        }
+        $file->move($tujuan_upload, $fileName);
 
         return redirect()->route('berita.index');
     }

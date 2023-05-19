@@ -49,3 +49,7 @@ Route::get('/forgotp', function(){
 Route::get('/login', function(){
     return view('frontend.layouts.login');
 })->name('login');
+
+Route::get('/resetp', function(){
+    return view('frontend.layouts.resetp');
+})->name('resetp');
