@@ -12,9 +12,9 @@ class Schedule extends Model
     public function user(): BelongsTo {
         return $this->belongsTo(users::class);
     }
-
+    protected $primaryKey = 'kode_schedule';
+    public $table = "schedule";
     protected $fillable = [
         'judul', 'deskripsi', 'tanggal',
-        'jam', 
-    ];
+        'jam', 'status', 'id',];
 }

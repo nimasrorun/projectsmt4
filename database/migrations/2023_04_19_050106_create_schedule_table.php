@@ -16,9 +16,10 @@ class CreateScheduleTable extends Migration
         Schema::create('schedule', function (Blueprint $table) {
             $table->bigIncrements('kode_schedule');
             $table->string('judul'); //unique
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->date('tanggal');
             $table->time('jam');
+            $table->string('status');
             $table->foreignId('id')->nullable()->constrained('users')->onUpdate('cascade')
             ->onDelete('cascade');
             $table->timestamps();
