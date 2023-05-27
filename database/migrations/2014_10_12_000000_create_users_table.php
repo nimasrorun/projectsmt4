@@ -25,8 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('gambar')->nullable();
             $table->string('level', 1);
-            $table->integer('jmlh_kolom')->nullable();;
-            $table->text('token_device')->nullable();;
+            $table->integer('jmlh_kolom');
+            $table->text('token_device')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
