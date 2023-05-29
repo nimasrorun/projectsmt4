@@ -15,7 +15,6 @@ class BeritaController extends Controller
     }
     
     public function store(Request $request){
-        
         $file = $request->file('file');
 
         $fileName = "IMG_BERITA_".uniqid().'.'.$file->getClientOriginalExtension();
@@ -23,6 +22,7 @@ class BeritaController extends Controller
         Berita::create([
             'judul_berita' => $request->input('txt_judul'),
             'dekripsi_berita' => $request->input('txt_isi'),
+            'link' => $request->input('txt_link'),
             'gambar' => $fileName
         ]);
 

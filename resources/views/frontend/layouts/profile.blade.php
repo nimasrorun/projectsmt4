@@ -43,12 +43,22 @@
       </div>
 
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('transaksi') }}">Laman Transaksi</a></li>
-          <li><a href="{{ route('login') }}">Logout</a></li>
-          <a href="{{ route('profile') }}" ><i class="fa fa-user-circle"  style='font-size:19px'></i></a>
-        </ul>
+          <ul>
+            <li>
+              <input type="text" name="" id="input" placeholder="Enter city name">
+              <button id="search" onclick="searchByCity()">Cari</button>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('transaksi') }}">Premium Plan</a></li>
+            <li><a>
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <button type="submit" class="">Logout</button>
+            </form>
+            </a>
+            </li>
+            <a href="{{ route('profile.index') }}" ><i class="fa fa-user-circle"  style='font-size:19px'></i></a>
+          </ul>
        
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -66,8 +76,8 @@
                 <a href="#">
                     <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
                 </a>
-                <h1>Nimas RN</h1>
-                <p>nimasrn@gmail.com</p>
+                <h1>{{ Auth::user()->username }}</h1>
+                <p>{{ Auth::user()->email }}</p>
             </div>
         </div>
     </div>
@@ -81,16 +91,16 @@
           
                 <div class="row">
                     <div class="bio-row">
-                        <p><span>Username</span>: Nimas</p>
+                        <p><span>Username</span>: {{ Auth::user()->username }}</p>
                     </div>
                     <div class="bio-row">
-                        <p><span>Email </span>: nimasrn@gmail.com</p>
+                        <p><span>Email </span>: {{ Auth::user()->email }}</p>
                     </div>
                     <div class="bio-row">
-                        <p><span>Nomor telpon </span>: 087755968383</p>
+                        <p><span>Nomor telpon </span>: {{ Auth::user()->phone }}</p>
                     </div>
                     <div class="">
-                        <a class="button" href="{{ route('editp') }}">Edit</a>
+                        <a class="button" href="{{ route('profile.edit') }}">Edit</a>
                     </div>
                 </div>
             </div>

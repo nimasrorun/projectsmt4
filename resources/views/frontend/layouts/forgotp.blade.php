@@ -13,17 +13,19 @@
       <div style=" display:flex; justify-content: center; align-items: center;">
       <img src="{{ asset('frontend/assets/img/protection.png')}}" alt="" style="width: 100px;">
       </div>
+      <form action="{{ route('forgot-password.check') }}" method="POST">
+        @csrf
       <label>
         <span>Username</span>
-        <input type="text" />
+        <input type="text" name="username"/>
       </label>
       <label>
         <span>Email</span>
-        <input type="email" />
+        <input type="email" name="email"/>
       </label>
 
-      <button type="button" class="submit">Reset</button>
- 
+      <button type="submit" class="submit">Reset</button>
+    </form>
     </div>
     <div class="sub-cont">
       <div class="img">

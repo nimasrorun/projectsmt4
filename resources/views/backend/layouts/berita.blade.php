@@ -117,7 +117,11 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nimas Rorun</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->username}}</span>
+                                    <form action="{{ route('admin.logout') }}" method="POST">
+                                        @csrf
+                                        <button class="btn" type="submit"><i class="fa fa-sign-out-alt"></i></button>
+                                    </form>
                                 
                             </a>
                           
@@ -151,6 +155,16 @@
                                             <div class="form-field__control">
                                               <label for="firstname" class="form-field__label">Judul</label>
                                               <input id="firstname" type="text" class="form-field__input" name="txt_judul" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-sm">
+                                          <div class="form-field">
+                                            <div class="form-field__control">
+                                              <label for="firstname" class="form-field__label">Link</label>
+                                              <input id="firstname" type="text" class="form-field__input" name="txt_link" />
                                             </div>
                                           </div>
                                         </div>
@@ -207,6 +221,7 @@
                                         <thead>
                                             <tr class="">
                                                 <th class="">Judul Berita</th>
+                                                <th class="">Link Berita</th>
                                                 <th class="">Aksi</th>
                                             </tr>
                                         </thead>
@@ -214,6 +229,7 @@
                                             @foreach ($berita as $item)
                                             <tr class="">
                                                 <td class="">{{ $item->judul_berita }}</td>
+                                                <td class="">{{ $item->link }}</td>
                                                 <td class="">
                                                     <form action="{{ route('berita.destroy', ['beritum' => $item->id_berita]) }}" method="POST">
                                                         @csrf

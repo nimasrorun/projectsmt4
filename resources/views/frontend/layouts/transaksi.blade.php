@@ -25,6 +25,7 @@
   <link href="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
+  {{-- <link href="{{ asset('frontend/assets/css/sb-admin-2.min.css')}}" rel="stylesheet"> --}}
   <link href="{{ asset('frontend/assets/css/style.css')}}" rel="stylesheet">
 
   <!-- =======================================================
@@ -48,14 +49,34 @@
       </div>
 
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('transaksi') }}">Transaksi</a></li>
-          <li><a href="{{ route('login') }}">Logout</a></li>
-       <a href="{{ route('profile') }}" ><i class="fa fa-user-circle"  style='font-size:19px'></i></a>
-        </ul>
-        
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        @if (Auth::check())
+          <ul>
+            <li>
+              <input type="text" name="" id="input" placeholder="Enter city name">
+              <button id="search" onclick="searchByCity()">Cari</button>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('transaksi') }}">Premium Plan</a></li>
+            <li><a>
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <button type="submit" class="">Logout</button>
+            </form>
+            </a>
+            </li>
+            <a href="{{ route('profile.index') }}" ><i class="fa fa-user-circle"  style='font-size:19px'></i></a>
+          </ul>
+        @else
+          <ul>
+            <li>
+              <input type="text" name="" id="input" placeholder="Enter city name">
+              <button id="search" onclick="searchByCity()">Cari</button>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('login') }}">Premium Plan</a></li>
+            <li><a href="{{ route('login') }}">Login</a></li>
+          </ul>
+        @endif
       </nav><!-- .navbar -->
 
     </div>
@@ -109,7 +130,6 @@
                 </section>
                 </div>
                 <div class="col-lg-6 div-inline-block">
-                  <form class="" novalidate="">
                     <div class="form-row">
                       <div class="col-md-4 col-lg-12 mb-3">
                         <label class="mb-2" for="validationCustom01">Nomor Rekening</label>
@@ -136,7 +156,7 @@
                             <label class="form-check-label">ShoopePay</label>
                           </div>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-xl-6 mb-3">
                           <div class="form-check">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                             <label class="form-check-label" for="inlineRadio1">BRI</label>
@@ -154,14 +174,24 @@
                             <label class="form-check-label">Visa</label>
                           </div>
                         </div>
+
+                        <hr>
+                        <div class="col-xl-6">
+                          <button class="btn btn-primary" data-toggle="modal" data-target="#ListRekening"> List Rekening </button>
+                        </div>
+                        <div class="col-xl-6">
+                          <div class="form-group">
+                            <label for="" class="col-form-label">Masukkan Bukti Pembayaran</label>
+                            <input type="file" class="form-control">
+                          </div>
+                        </div>
                         
                       </div>
-                  </form>
                 </div>
                 
               </div>
             </div>
-
+            
           </div><!-- End blog entries list -->
 
           {{-- <div class="col-lg-4">
@@ -241,7 +271,7 @@
 
             </div><!-- End sidebar --> --}}
 
-          </div><!-- End blog sidebar -->
+          {{-- </div><!-- End blog sidebar --> --}}
 
         </div>
 
@@ -249,6 +279,22 @@
     </section><!-- End Blog Single Section -->
 
   </main><!-- End #main -->
+
+  <div class="modal fade bd-example-modal-lg" id="ListRekening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">List Rekening Kami</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <img src="{{ asset('frontend/assets/img/list-rekening.jpg')}}" alt="" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -300,6 +346,10 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="{{ asset('frontend/assets/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('frontend/assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  
   <script src="{{ asset('frontend/assets/vendor/aos/aos.js')}}"></script>
   <script src="{{ asset('frontend/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
   <script src="{{ asset('frontend/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
@@ -308,7 +358,6 @@
   <script src="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
   <script src="{{ asset('frontend/assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
 
-  <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <!-- Template Main JS File -->
   <script src="{{ asset('frontend/assets/js/main.js')}}"></script>
 
