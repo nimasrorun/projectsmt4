@@ -10,19 +10,21 @@
 <body>
   <div class="cont">
     <div class="form sign-in">
-      <h2>Login</h2>
-      <p>Welocome to SKYdhule</p>
-      <label>
-        <span>Email</span>
-        <input type="email" />
-      </label>
-      <label>
-        <span>Password</span>
-        <input type="password" />
-      </label>
-      
-      <a href="{{ route('forgotp')}}"><label ><p class="forgot-pass">Forgot password?</p></label></a>
-      <button type="button" class="submit">Sign In</button>
+      <form action="{{ route('login.submit')}}" method="POST">
+        @csrf
+        <h2>Login</h2>
+        <p>Welocome to SKYdhule</p>
+        <label>
+          <span>Username/Email</span>
+          <input type="text" name="username"/>
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password"/>
+        </label>
+        <a href="{{ route('forgotp')}}"><label ><p class="forgot-pass">Forgot password?</p></label></a>
+        <button type="submit" class="submit">Sign In</button>
+      </form>
  
     </div>
     <div class="sub-cont">
@@ -41,21 +43,23 @@
         </div>
       </div>
       <div class="form sign-up">
+        <form action="{{ route('register')}}" method="POST">
+          @csrf
         <h2>Register</h2>
         <label>
           <span>Username</span>
-          <input type="text" />
+          <input type="text" name="username"/>
         </label>
         <label>
           <span>Email</span>
-          <input type="email" />
+          <input type="email" name="email"/>
         </label>
         <label>
           <span>Password</span>
-          <input type="password" />
+          <input type="password" name="password"/>
         </label>
-        <button type="button" class="submit">Sign Up</button>
-
+        <button type="submit" class="submit">Sign Up</button>
+      </form>
       </div>
     </div>
   </div>

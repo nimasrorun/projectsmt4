@@ -44,12 +44,36 @@
     
     
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('transaksi') }}">Transaksi</a></li>
-          <li><a href="{{ route('login') }}">Logout</a></li>
-          <a href="{{ route('profile') }}" ><i class="fa fa-user-circle"  style='font-size:19px'></i></a>
-        </ul>
+        @if (Auth::check())
+          <ul>
+            <li>
+              <input type="text" name="" id="input" placeholder="Enter city name">
+              <button id="search" onclick="searchByCity()">Cari</button>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('transaksi') }}">Premium Plan</a></li>
+            <li><a>
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <button type="submit" class="">Logout</button>
+            </form>
+            </a>
+            </li>
+            <i class="fa fa-sm fa-user-circle-o" ></i>
+            <a href="{{ route('profile.index') }}" ><i class="fa fa-user-circle"  style='font-size:19px'></i></a>
+          </ul>
+        @else
+          <ul>
+            <li>
+              <input type="text" name="" id="input" placeholder="Enter city name">
+              <button id="search" onclick="searchByCity()">Cari</button>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('login') }}">Premium Plan</a></li>
+            <li><a href="{{ route('login') }}">Login</a></li>
+          </ul>
+        @endif
+        
        
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -59,7 +83,44 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
-   
+    <main class="weather">       
+      <div class="weather">
+          <p id="city"></p>
+          <div class="temp-box">
+              <img src="weathericon.png" alt="" id="img">
+              <p id="temperature"></p>
+          </div>
+          <span id="clouds"></span>
+      </div>
+      <div class="divider1"></div>
+
+      <div class="transparan-container">
+          <p class="cast-header">Ramalan Cuaca</p>
+          <div class="templist">
+
+              <div class="next">
+                  <div>
+                      <p class="time"></p>
+                      <p></p>
+                  </div>
+                  <p class="desc">-</p>
+              </div>
+          </div>
+      </div>
+  </main>
+
+  <div class="forecstD">
+      <div class="divider2"></div>
+      <p class="cast-header"> Ramalan Cuaca 4 Hari Kedepan</p>
+      <div class="weekF">
+          <div class="dayF">
+          
+          </div>
+          
+      </div>
+  </div>
+
+  <script src="{{ asset('frontend/assets/js/weather.js') }}"></script>
   </section><!-- End Hero -->
 
   <main id="main">
@@ -94,68 +155,27 @@
                     
                     <div class="swiper-slide">
                       <div class="testimonial-item">
-                        <img src="{{ asset('frontend/assets/img/promosi-banner-1.jpg') }}" class="testimonial-img-banner" alt="">
+                        <img src="{{ asset('frontend/assets/img/dashboard_image/promosi.jpg') }}" class="testimonial-img-banner" alt="">
                       </div>
                     </div>
 
                     <div class="swiper-slide">
                       <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                        <h3>Saul Goodman</h3>
-                        <h4>Ceo &amp; Founder</h4>
-                        <p>
-                          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                          Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
+                        <img src="{{ asset('frontend/assets/img/dashboard_image/promosi(1).jpg') }}" class="testimonial-img-banner" alt="">
                       </div>
-                    </div><!-- End testimonial item -->
-        
+                    </div>
+
                     <div class="swiper-slide">
                       <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                        <h3>Sara Wilsson</h3>
-                        <h4>Designer</h4>
-                        <p>
-                          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                          Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
+                        <img src="{{ asset('frontend/assets/img/dashboard_image/promosi(2).jpg') }}" class="testimonial-img-banner" alt="">
                       </div>
-                    </div><!-- End testimonial item -->
-        
+                    </div>
+
                     <div class="swiper-slide">
                       <div class="testimonial-item">
-                        <img src="assets/img/features-3.jpg" class="testimonial-img" alt="">
-                        
+                        <img src="{{ asset('frontend/assets/img/dashboard_image/promosi(3).jpg') }}" class="testimonial-img-banner" alt="">
                       </div>
-                    </div><!-- End testimonial item -->
-        
-                    <div class="swiper-slide">
-                      <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                        <h3>Matt Brandon</h3>
-                        <h4>Freelancer</h4>
-                        <p>
-                          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                          Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                      </div>
-                    </div><!-- End testimonial item -->
-        
-                    <div class="swiper-slide">
-                      <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                        <h3>John Larson</h3>
-                        <h4>Entrepreneur</h4>
-                        <p>
-                          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                          Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                      </div>
-                    </div><!-- End testimonial item -->
+                    </div>
         
                   </div>
                   <div class="swiper-pagination"></div>
@@ -216,16 +236,15 @@
         </div>
 
         <div class="row">
-
           @foreach ($berita as $item)
           <div class="col-md-6 col-lg-12">
             <div class="icon-box" data-aos="fade-up">
               <div >
                 <div class="icon"><img src="{{ asset('frontend/assets/img/berita_image/'.$item->gambar)}}" class="berita-img-sm-banner"></div>
               </div>
-              <div>
-                <h4 class="title"><a href="">{{$item->judul_berita}}</a></h4>
-                <p class="description">{{$item->dekripsi_berita}}</p>   
+              <div style="width: 70%">
+                <h4 class="title" style="max-width: 200ch; overflow: hidden; white-space: nowrap; text-overflow: ellipsis"><a href="{{ $item->link }}">{{$item->judul_berita}}</a></h4>
+                <p class="description" style="word-wrap: break-word; max-width: 200ch; overflow: hidden; white-space: nowrap; text-overflow: ellipsis">{{$item->dekripsi_berita}}</p>   
               </div>
             </div>
           </div>
@@ -255,7 +274,7 @@
               <li><a href="{{route('home')}}">Home</a></li>
               <li><a href="{{route('transaksi')}}"> Transaksi</a></li>
               <li><a href="{{route('login')}}"> Logout</a></li>
-              <li><a href="{{route('profile')}}"> Profile</a></li>
+              <li><a href="{{route('profile.index')}}"> Profile</a></li>
             </ul>
           </div>
 

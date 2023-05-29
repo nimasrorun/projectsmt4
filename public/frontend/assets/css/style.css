@@ -330,10 +330,12 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  margin-top: 70px;
   width: 100%;
-  height: 75vh;
-  background: url("../img/hero-bg.jpg") top center;
-  background-size: cover;
+  height: 95vh;
+ 
+  background-image:url(../img/bg-page.jpg) ;
+  background-size: contain;
   position: relative;
   margin-bottom: -140px;
   z-index: 1;
@@ -341,7 +343,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(60, 65, 51, 0.4);
+  background: rgba(29, 29, 28, 0);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -350,7 +352,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .hero-container {
-  position: absolute;
+  position: relative;
   bottom: 0;
   top: 0;
   left: 0;
@@ -360,6 +362,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  opacity: 0,5;
 }
 
 #hero h1 {
@@ -392,7 +395,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-get-started:hover {
-  background: #3772a1;
+  background: #94c045;
 }
 
 @media (min-width: 1024px) {
@@ -503,10 +506,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about .container {
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   width: 80%;
-  padding-bottom: 15px;
-  background: #fff;
 }
 
 .about .count-box {
@@ -2355,16 +2355,6 @@ input:last-of-type:before {
   position: relative;
 }
 
-.testimonials::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-}
-
 .testimonials .section-header {
   margin-bottom: 40px;
 }
@@ -2496,3 +2486,157 @@ input:last-of-type:before {
   height: 37px;
 }
 
+/* WEATHER */
+
+@import url('https://fonts.googleapis.com/css2?family=Concert+One:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+html{
+    height: 100%;
+}
+h1{
+    text-align: center;
+}
+/* body{
+    background: rgb(219, 17, 17);
+    padding: 1rem 5rem;
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    background: linear-gradient(45deg,rgba(183, 204, 248, 0.717),rgba(7, 43, 127, 0.679)), url('../img/hero-bg.jpg'); */
+    
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+/* .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+.header h1{
+    color: rgb(214, 147, 45);
+    text-decoration: underline;
+    font-family: 'Orbitron', sans-serif;
+}
+#input{
+    font-size: 18px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background: aliceblue;
+}
+#search{
+    background: none;
+    padding: 5px 20px;
+    color: aliceblue;
+    outline: none;
+    background: #3772a1;
+    font-size: 17px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+}
+.weather{
+    text-align: center;
+    color: rgb(5, 5, 5);
+}
+#city{
+    font-size: 20px;
+    font-weight: 800;
+    color: #070707;
+}
+.weather img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(211, 205, 205, 0.408);
+}
+#temperature{
+    font-size: 50px;
+    margin: 0;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: #080808;
+    font-weight: 1000;
+}
+.temp-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    color: #161515;
+}
+#clouds{
+    font-size: 20px;
+    background: rgba(60, 112, 136, 0.5);
+    padding: 5px 100px;
+    border-radius: 200px;
+}
+main.weather{
+    display: grid;
+    grid-column-gap: 25px;
+    grid-template-columns: 1fr 5px 1fr;
+    align-items: center;
+    margin: 0 50px;
+    color: rgb(7, 7, 7);
+}
+.next{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.transparan-container {
+  background-color: rgba(60, 112, 136, 0.5);
+  padding: 10px 50px;
+  border-radius: 10px;
+}
+.transparan-container {
+  opacity: 1;
+}
+
+
+.next p,.next h3{
+    margin: 1px 0;
+}
+.forecstD{
+    margin: 70px 100px;
+    color: rgb(18, 18, 19);
+    padding-left: 200px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    
+}
+
+
+.weekF{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.cast-header{
+    color: rgb(250, 246, 246);
+    background: rgba(114, 114, 113, 0.233);
+    width: max-content;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+   
+  
+}
+.divider1,.divider2{
+    background: rgba(254, 189, 132, 0);
+    height: 10px;
+    border-radius: 5px;
+}
+.divider2{
+    height: 1px;
+    width: 30%;
+    margin: 0 auto;
+}
+.time,.date{
+    color: rgb(10, 10, 10);
+}
+.desc{
+    color: rgb(17, 22, 6);
+}

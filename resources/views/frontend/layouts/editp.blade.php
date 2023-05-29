@@ -49,8 +49,8 @@
                 <a href="#">
                     <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
                 </a>
-                <h1>Nimas RN</h1>
-                <p>nimasrn@gmail.com</p>
+                <h1>{{ Auth::user()->username }}</h1>
+                <p>{{ Auth::user()->email }}</p>
             </div>
   
            
@@ -63,24 +63,26 @@
                INFORMATION
             </div>
             <div class="panel-body bio-graph-info">
-
+              <form action="{{ route('profile.update', Auth::user()->id)}}" method="POST">
+                @csrf
                 <div class="row" style="margin-left: 100px;">
                   <div class="group" style="width: auto;">
-                    <input  type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                    <input  type="text" required="required" value="{{ Auth::user()->username }}" name="username"/><span class="highlight"></span><span class="bar"></span>
                     <label>Username</label>
                   </div> 
                   <div class="group" style="width: auto;">
-                    <input type="text" required="required" style=""/><span class="highlight"></span><span class="bar"></span>
+                    <input type="text" required="required" value="{{ Auth::user()->email }}" name="email"/><span class="highlight"></span><span class="bar"></span>
                     <label>Email</label>
                   </div>
                     <div class="group" style="width: auto;">
-                      <input type="tel" required="required"/><span class="highlight"></span><span class="bar"></span>
+                      <input type="tel" required="required" value="{{ Auth::user()->phone }}" name="phone"/><span class="highlight"></span><span class="bar"></span>
                       <label>No telp</label>
                     </div>
                     <div style="margin: 20px 0 ;">
-                        <a class="button" href="{{ route('editp') }}">Save</a>
+                        <button class="button" type="submit">Save</a>
                     </div>
                 </div>
+              </form>
             </div>
         </div>
         

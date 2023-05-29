@@ -181,12 +181,12 @@ p {
   text-align: center;
   
 }
-label {
+/* label {
   display: block;
   width: 260px;
   margin: 25px auto 0;
   text-align: left;
-}
+} */
 label span {
   font-size: 7px;
   color: #254c6c;
