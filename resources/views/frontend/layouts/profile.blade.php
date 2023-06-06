@@ -44,12 +44,8 @@
 
       <nav id="navbar" class="navbar">
           <ul>
-            <li>
-              <input type="text" name="" id="input" placeholder="Enter city name">
-              <button id="search" onclick="searchByCity()">Cari</button>
-            </li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="{{ route('transaksi') }}">Premium Plan</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            {{-- <li><a href="{{ route('transaksi') }}">Premium Plan</a></li> --}}
             <li><a>
             <form action="{{ route('logout') }}" method="POST">
               @csrf

@@ -26,7 +26,7 @@ class ForgotPassController extends Controller
 
         if($request->password == $request->confirm_password){
             $user->update([
-                'password' => $request->password
+                'password' => bcrypt($request->password)
             ]);
             
             return redirect()->route('login');

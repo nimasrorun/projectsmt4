@@ -11,22 +11,19 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function login(Request $request){
+
         $loginType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         
-
+        
         if($loginType == 'email'){
-            $user = User::where('email', '=', $request->username)->first();
-            if($user && $request->password == $user->password){
-                Auth::login($user);
-                if(Auth::check()) return redirect()->route('home');
+            if(Auth::attempt(['email' => $request->username, 'password' => $request->password]))  {
+                return redirect()->route('home');
             }else{
                 return redirect()->route('login');
             }
         }else if($loginType == 'username'){
-            $user = User::where('username', '=', $request->username)->first();
-            if($user && $request->password == $user->password){
-                Auth::login($user);
-                if(Auth::check()) return redirect()->route('home');
+            if(Auth::attempt(['username' => $request->username, 'password' => $request->password]))  {
+                return redirect()->route('home');
             }else{
                 return redirect()->route('login');
             }
@@ -38,7 +35,7 @@ class UserController extends Controller
         User::create([
             'username' => $request->username,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'joined' => $date->format('Y-m-d'),
             'level' => "1",
             'status' => "1",

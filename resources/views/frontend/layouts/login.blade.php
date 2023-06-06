@@ -22,7 +22,7 @@
           <span>Password</span>
           <input type="password" name="password"/>
         </label>
-        <a href="{{ route('forgotp')}}"><label ><p class="forgot-pass">Forgot password?</p></label></a>
+        <a href="{{ route('forgot-password.index')}}"><label ><p class="forgot-pass">Forgot password?</p></label></a>
         <button type="submit" class="submit">Sign In</button>
       </form>
  
