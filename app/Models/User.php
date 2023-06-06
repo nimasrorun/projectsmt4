@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable , HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'username', 'email', 'password', 'level', 'gambar',
         'nama', 'alamat', 'phone', 'joined', 'jmlh_kolom',
-        'status',
+        'status', 'id'
     ];
 
     /**
@@ -46,6 +46,6 @@ class User extends Authenticatable
          return $this->hasMany(schedule::class);
     }
     public function transaksi(): HasMany {
-        return $this->hasMany(transaksi::class);
+        return $this->hasMany(transaksi::class, 'id');
    }
 }

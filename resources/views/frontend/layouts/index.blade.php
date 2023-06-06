@@ -47,11 +47,15 @@
         @if (Auth::check())
           <ul>
             <li>
-              <input type="text" name="" id="input" placeholder="Enter city name">
+              <input type="text" name="" id="input" placeholder="Enter city name" style="width: 60%; height: 100%;">
               <button id="search" onclick="searchByCity()">Cari</button>
             </li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="{{ route('transaksi') }}">Premium Plan</a></li>
+            <li><a href="{{route('home')}}">Home</a></li>
+            @if (Auth::user()->level == 3)
+                
+            @else
+              <li><a href="{{ route('transaksi.index') }}">Premium Plan</a></li>
+            @endif
             <li><a>
             <form action="{{ route('logout') }}" method="POST">
               @csrf
@@ -65,7 +69,7 @@
         @else
           <ul>
             <li>
-              <input type="text" name="" id="input" placeholder="Enter city name">
+              <input type="text" name="" id="input" placeholder="Enter city name" style="width: 60%; height: 100%;">
               <button id="search" onclick="searchByCity()">Cari</button>
             </li>
             <li><a href="index.html">Home</a></li>
@@ -216,17 +220,24 @@
     </section><!-- End About Section -->
 
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="fade-in">
-
-        <div class="text-center">
-          <h3>PREMIUM</h3>
-          <a class="cta-btn" href="#">Upgrade to Pro</a>
+    @if (Auth::check())
+      @if (Auth::user()->level == 3)
+          
+      @else
+      <section id="cta" class="cta">
+        <div class="container" data-aos="fade-in">
+  
+          <div class="text-center">
+            <h3>PREMIUM</h3>
+            <a class="cta-btn" href="{{ route('transaksi.index')}}">Upgrade to Pro</a>
+          </div>
+          
+          
         </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-
+      </section><!-- End Cta Section -->          
+      @endif
+    @endif
+    
     <!-- ======= Services Section ======= -->
     <section id="services" class="services ">
       <div class="container">
@@ -272,7 +283,7 @@
             <h4>Link</h4>
             <ul>
               <li><a href="{{route('home')}}">Home</a></li>
-              <li><a href="{{route('transaksi')}}"> Transaksi</a></li>
+              <li><a href="{{route('transaksi.index')}}"> Transaksi</a></li>
               <li><a href="{{route('login')}}"> Logout</a></li>
               <li><a href="{{route('profile.index')}}"> Profile</a></li>
             </ul>

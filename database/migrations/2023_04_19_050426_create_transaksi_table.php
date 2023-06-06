@@ -19,7 +19,7 @@ class CreateTransaksiTable extends Migration
             $table->integer('harga');
             $table->string('bukti_pembayaran');
             $table->string('nama_akun_bank');
-            $table->string('nama_bank');
+            $table->string('nomer_rekening');
             $table->foreignId('id')->nullable()->constrained('users')->onUpdate('cascade')
             ->onDelete('cascade');
             $table->foreignId('kode_pembayaran')->nullable()->constrained('metode_pembayaran')->onUpdate('cascade')

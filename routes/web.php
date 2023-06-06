@@ -6,6 +6,9 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPassController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransAController;
+use App\Http\Controllers\TransaksiController;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,17 +43,10 @@ Route::get('/admin/login', function(){
     return view('backend.layouts.loginadmin');
 })->name('adminlogin');
 
-Route::get('/forgotp', function(){
-    return view('frontend.layouts.forgotp');
-})->name('forgotp');
-
 Route::get('/login', function(){
     return view('frontend.layouts.login');
 })->name('login');
 
-Route::get('/resetp', function(){
-    return view('frontend.layouts.resetp');
-})->name('resetp');
 
 // User Login Routes
 
@@ -75,3 +71,15 @@ Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.lo
 Route::get('/forgot-password', [ForgotPassController::class, 'index'])->name('forgot-password.index');
 Route::post('/forgot-password', [ForgotPassController::class, 'check'])->name('forgot-password.check');
 Route::post('/forgot-password/reset', [ForgotPassController::class, 'reset_password'])->name('forgot-password.reset');
+
+// Transaksi Routes
+
+Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
+Route::post('/transaksi', [TransaksiController::class, 'pembayaran'])->name('transaksi.pembayaran');
+
+//Transaksi admin
+Route::get('admin/transaksi', [TransAController::class, 'index'])->name('admin.transaksi.index');
+Route::post('admin/transaksi/valid/{transaksi}', [TransAController::class, 'update'])->name('admin.transaksi.valid');
+Route::post('admin/transaksi/denied/{transaksi}', [TransAController::class, 'batal'])->name('admin.transaksi.batal');
+Route::post('admin/transaksi/revoke/{user}', [TransAController::class, 'revokeMember'])->name('admin.transaksi.revoke');
+Route::get('testingcmd', [TransAController::class, 'cmdtesting']);

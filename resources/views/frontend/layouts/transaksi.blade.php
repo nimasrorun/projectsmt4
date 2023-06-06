@@ -51,12 +51,13 @@
       <nav id="navbar" class="navbar">
         @if (Auth::check())
           <ul>
-            <li>
-              <input type="text" name="" id="input" placeholder="Enter city name">
-              <button id="search" onclick="searchByCity()">Cari</button>
-            </li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="{{ route('transaksi') }}">Premium Plan</a></li>
+            
+            <li><a href="{{ route('home') }}">Home</a></li>
+            @if (Auth::user()->level == 3)
+                
+            @else
+              <li><a href="{{ route('transaksi.index') }}">Premium Plan</a></li>
+            @endif
             <li><a>
             <form action="{{ route('logout') }}" method="POST">
               @csrf
@@ -67,11 +68,7 @@
             <a href="{{ route('profile.index') }}" ><i class="fa fa-user-circle"  style='font-size:19px'></i></a>
           </ul>
         @else
-          <ul>
-            <li>
-              <input type="text" name="" id="input" placeholder="Enter city name">
-              <button id="search" onclick="searchByCity()">Cari</button>
-            </li>
+          
             <li><a href="index.html">Home</a></li>
             <li><a href="{{ route('login') }}">Premium Plan</a></li>
             <li><a href="{{ route('login') }}">Login</a></li>
@@ -117,14 +114,19 @@
                 </div> --}}
                 <div class="col-lg-3 col-md-6 div-inline-block">
                   <section class="pricing">
+                    <form action="{{ route('transaksi.pembayaran') }}" method="POST" enctype="multipart/form-data">
+                      @csrf
                   <div class="box" data-aos="fade-up">
                     <h3>Free</h3>
-                    <h4><sup>RP</sup>10k<span> / bulan</span></h4>
+                    <h4><sup>RP</sup>20k<span> / bulan</span></h4>
                     <ul>
-                      <li><i class="bx bx-check-double"></i> yg di dapat kalau premium blblblblbblblbll</li>
+                      <li><i class="bx bx-check-double"></i> ramalan cuaca yang akurat</li>
+                      <li><i class="bx bx-check-double"></i> update cuaca terbaru</li>
+                      <li><i class="bx bx-check-double"></i> pengelolaan draft schedule kamu</li>
+                      <li><i class="bx bx-check-double"></i> fitur add schedule tanpa batas</li>
                     </ul>
                     <div class="btn-wrap">
-                      <a href="#" class="btn-buy">Buy Now</a>
+                      <button class="btn-buy" type="submit">submit</button>
                     </div>
                   </div>
                 </section>
@@ -132,60 +134,65 @@
                 <div class="col-lg-6 div-inline-block">
                     <div class="form-row">
                       <div class="col-md-4 col-lg-12 mb-3">
+                        <label class="mb-2" for="validationCustom01">Nama</label>
+                        <input class="form-control" id="validationCustom01" type="text" placeholder="Nama" required="" name="nama_akun_bank">
+                        <div class="valid-feedback">Looks good!</div>
+                      </div>
+                      <div class="col-md-4 col-lg-12 mb-3">
                         <label class="mb-2" for="validationCustom01">Nomor Rekening</label>
-                        <input class="form-control" id="validationCustom01" type="text" placeholder="No rek" required="">
+                        <input class="form-control" id="validationCustom01" type="text" placeholder="No rek" required="" name="nomer_rekening">
                         <div class="valid-feedback">Looks good!</div>
                       </div>
                       <div class="row">
                         <label class="mb-2" for="validationCustom01">Metode Pembayaran</label>
                         <div class="col-xl-6">
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <input class="form-check-input" type="radio" name="kode_pembayaran" id="inlineRadio1" value="1">
                             <label class="form-check-label" for="inlineRadio1">Dana</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <input class="form-check-input" type="radio" name="kode_pembayaran" id="inlineRadio2" value="4">
                             <label class="form-check-label">Gopay</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <input class="form-check-input" type="radio" name="kode_pembayaran" id="inlineRadio1" value="3">
                             <label class="form-check-label" for="inlineRadio1">OVO</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <input class="form-check-input" type="radio" name="kode_pembayaran" id="inlineRadio2" value="2">
                             <label class="form-check-label">ShoopePay</label>
                           </div>
                         </div>
                         <div class="col-xl-6 mb-3">
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <input class="form-check-input" type="radio" name="kode_pembayaran" id="inlineRadio1" value="5">
                             <label class="form-check-label" for="inlineRadio1">BRI</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <input class="form-check-input" type="radio" name="kode_pembayaran" id="inlineRadio2" value="6">
                             <label class="form-check-label">Mandiri</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <input class="form-check-input" type="radio" name="kode_pembayaran" id="inlineRadio1" value="8">
                             <label class="form-check-label" for="inlineRadio1">BNI</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <input class="form-check-input" type="radio" name="kode_pembayaran" id="inlineRadio2" value="7">
                             <label class="form-check-label">Visa</label>
                           </div>
                         </div>
 
                         <hr>
                         <div class="col-xl-6">
-                          <button class="btn btn-primary" data-toggle="modal" data-target="#ListRekening"> List Rekening </button>
+                          <div class="btn btn-primary m-3" data-toggle="modal" data-target="#ListRekening"> List Rekening </div>
                         </div>
                         <div class="col-xl-6">
                           <div class="form-group">
                             <label for="" class="col-form-label">Masukkan Bukti Pembayaran</label>
-                            <input type="file" class="form-control">
+                            <input type="file" class="form-control" name="bukti_pembayaran">
                           </div>
                         </div>
-                        
+                      </form>
                       </div>
                 </div>
                 
@@ -311,9 +318,9 @@
             <h4>Link</h4>
             <ul>
               <li><a href="{{route('home')}}">Home</a></li>
-              <li><a href="{{route('transaksi')}}"> Transaksi</a></li>
+              <li><a href="{{route('transaksi.index')}}"> Transaksi</a></li>
               <li><a href="{{route('login')}}"> Logout</a></li>
-              <li><a href="{{route('profile')}}"> Profile</a></li>
+              <li><a href="{{route('profile.index')}}"> Profile</a></li>
             </ul>
           </div>
 
